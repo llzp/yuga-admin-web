@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuga.modules.school.dao.checker.ClassCheckDao">
+    
+	<sql id="classCheckColumns">
+		a.id AS "id",
+		a.course_section AS "courseSection",
+		a.teacher_id AS "teacherId",
+		a.checker_id AS "checkerId",
+		a.condition_1 AS "condition1",
+		a.condition_2 AS "condition2",
+		a.condition_3 AS "condition3"
+	</sql>
+	
+	<sql id="classCheckJoins">
+	</sql>
+    
+	<select id="get" resultType="ClassCheck">
+		SELECT 
+			<include refid="classCheckColumns"/>
+		FROM yg_class_check a
+		<include refid="classCheckJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="ClassCheck">
+		SELECT 
+			<include refid="classCheckColumns"/>
+		FROM yg_class_check a
+		<include refid="classCheckJoins"/>
+		<where>
+			
+			<if test="courseSection != null and courseSection != ''">
+				AND a.course_section = #{courseSection}
+			</if>
+			<if test="teacherId != null and teacherId != ''">
+				AND a.teacher_id = #{teacherId}
+			</if>
+			<if test="checkerId != null and checkerId != ''">
+				AND a.checker_id = #{checkerId}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="ClassCheck">
+		SELECT 
+			<include refid="classCheckColumns"/>
+		FROM yg_class_check a
+		<include refid="classCheckJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO yg_class_check(
+			course_section,
+			teacher_id,
+			checker_id,
+			condition_1,
+			condition_2,
+			condition_3
+		) VALUES (
+			#{courseSection},
+			#{teacherId},
+			#{checkerId},
+			#{condition1},
+			#{condition2},
+			#{condition3}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE yg_class_check SET 	
+			course_section = #{courseSection},
+			teacher_id = #{teacherId},
+			checker_id = #{checkerId},
+			condition_1 = #{condition1},
+			condition_2 = #{condition2},
+			condition_3 = #{condition3}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM yg_class_check
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
