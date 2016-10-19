@@ -64,10 +64,14 @@
 			Nexus Repository</name> <url>http://192.168.11.36:8888/nexus/content/groups/public</url> 
 			</repository> -->
 		<repository>
-			<id>yuga-repos</id>
-			<name>central</name>
-			<!-- 配置仓库的地址 -->
-			<url>http://120.25.97.0:8083/repository/maven-central/</url>
+			<id>0-repos</id>
+			<name>0 Releases</name>
+			<url>http://120.24.73.53:8081/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>alibaba</id>
+			<name>alibaba release</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 		</repository>
 		<repository>
 			<id>1-repos</id>
@@ -83,11 +87,6 @@
 			<id>3-repos</id>
 			<name>3 Releases</name>
 			<url>http://repository.sonatype.org/content/groups/public/</url>
-		</repository>
-		<repository>
-			<id>oschina-repos</id>
-			<name>Oschina Releases</name>
-			<url>http://maven.oschina.net/content/groups/public</url>
 		</repository>
 		<repository>
 			<id>java-repos</id>
@@ -116,28 +115,17 @@
 			2</name>
 			<url>https://app.camunda.com/nexus/content/groups/public</url>
 		</repository>
-		<repository>
-			<id>thinkgem-repos</id>
-			<name>ThinkGem Repository</name>
-			<url>http://git.oschina.net/thinkgem/repos/raw/master</url>
-		</repository>
 	</repositories>
 	<!-- 设定插件仓库 -->
 	<pluginRepositories>
 
-		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址. <pluginRepository> <id>nexus-repos</id> 
-			<name>Team Nexus Repository</name> <url>http://192.168.11.36:8888/nexus/content/groups/public</url> 
-			</pluginRepository> -->
-
+		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址. -->
 		<pluginRepository>
-			<id>oschina-repos</id>
-			<name>Oschina Releases</name>
-			<url>http://maven.oschina.net/content/groups/public</url>
+			<id>nexus-repos</id>
+			<name>Team Nexus Repository</name>
+			<url>http://120.24.73.53:8081/nexus/content/groups/public/</url>
 		</pluginRepository>
-
-	</pluginRepositories>
-
-	<!-- 依赖项定义 -->
+	</pluginRepositories> <!-- 依赖项定义 -->
 	<dependencies>
 		<dependency>
 			<groupId>xerces</groupId>
