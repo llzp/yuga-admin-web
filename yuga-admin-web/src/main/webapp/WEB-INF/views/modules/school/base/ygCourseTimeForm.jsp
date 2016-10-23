@@ -47,30 +47,6 @@
 				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label">保留字段1：</label>
-			<div class="controls">
-				<form:input path="param1" htmlEscape="false" maxlength="120" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">保留字段2：</label>
-			<div class="controls">
-				<form:input path="param2" htmlEscape="false" maxlength="120" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">保留字段3：</label>
-			<div class="controls">
-				<form:input path="param3" htmlEscape="false" maxlength="120" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">保留字段4：</label>
-			<div class="controls">
-				<form:input path="param4" htmlEscape="false" maxlength="120" class="input-xlarge "/>
-			</div>
-		</div>
 		<div class="form-actions">
 			<shiro:hasPermission name="school:base:ygCourseTime:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>

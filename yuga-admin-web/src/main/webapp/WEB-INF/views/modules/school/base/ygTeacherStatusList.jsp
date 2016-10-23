@@ -37,6 +37,7 @@
 		<thead>
 			<tr>
 				<th>对应等级</th>
+				<th>对应内容</th>
 				<shiro:hasPermission name="school:base:ygTeacherStatus:edit"><th>操作</th></shiro:hasPermission>
 			</tr>
 		</thead>
@@ -46,6 +47,9 @@
 				<td><a href="${ctx}/school/base/ygTeacherStatus/form?id=${ygTeacherStatus.id}">
 					${ygTeacherStatus.level}
 				</a></td>
+				<td>
+					${ygTeacherStatus.content}
+				</td>
 				<shiro:hasPermission name="school:base:ygTeacherStatus:edit"><td>
     				<a href="${ctx}/school/base/ygTeacherStatus/form?id=${ygTeacherStatus.id}">修改</a>
 					<a href="${ctx}/school/base/ygTeacherStatus/delete?id=${ygTeacherStatus.id}" onclick="return confirmx('确认要删除该教师教学情况吗？', this.href)">删除</a>

@@ -25,7 +25,7 @@
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form">
-			<li><label>所属用户ID：</label>
+			<li><label>姓名：</label>
 				<sys:treeselect id="user" name="user.id" value="${ygTeacherUser.user.id}" labelName="user.name" labelValue="${ygTeacherUser.user.name}"
 					title="用户" url="/sys/office/treeData?type=3" cssClass="input-small" allowClear="true" notAllowSelectParent="true"/>
 			</li>
@@ -40,7 +40,7 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
-				<th>所属用户ID</th>
+				<th>姓名</th>
 				<th>所属班级</th>
 				<shiro:hasPermission name="school:base:ygTeacherUser:edit"><th>操作</th></shiro:hasPermission>
 			</tr>

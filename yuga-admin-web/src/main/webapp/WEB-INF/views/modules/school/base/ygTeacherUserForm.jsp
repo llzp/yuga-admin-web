@@ -34,7 +34,7 @@
 		<form:hidden path="id"/>
 		<sys:message content="${message}"/>		
 		<div class="control-group">
-			<label class="control-label">所属用户ID：</label>
+			<label class="control-label">姓名：</label>
 			<div class="controls">
 				<sys:treeselect id="user" name="user.id" value="${ygTeacherUser.user.id}" labelName="user.name" labelValue="${ygTeacherUser.user.name}"
 					title="用户" url="/sys/office/treeData?type=3" cssClass="" allowClear="true" notAllowSelectParent="true"/>
@@ -43,7 +43,10 @@
 		<div class="control-group">
 			<label class="control-label">所属班级：</label>
 			<div class="controls">
-				<form:input path="classId" htmlEscape="false" maxlength="11" class="input-xlarge "/>
+				<form:select id="classId" path="classId" class="input-xlarge">
+					<form:option value="-1" label="无班级"/>
+					<form:options items="${fns:getGradeList()}" itemLabel="name" itemValue="id" title="clas" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="form-actions">

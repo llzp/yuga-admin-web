@@ -57,7 +57,7 @@
 				<th>设备名称</th>
 				<th>产品编号</th>
 				<th>生产时间</th>
-				<th>设备状态 0：正常 1：损坏 2：维修中</th>
+				<th>设备状态</th>
 				<th>使用者姓名</th>
 				<shiro:hasPermission name="school:base:ygMultimediaStatus:edit"><th>操作</th></shiro:hasPermission>
 			</tr>

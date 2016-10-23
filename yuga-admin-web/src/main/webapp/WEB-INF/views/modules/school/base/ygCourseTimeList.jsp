@@ -31,18 +31,6 @@
 			<li><label>上课时间：</label>
 				<form:input path="timeRange" htmlEscape="false" maxlength="120" class="input-medium"/>
 			</li>
-			<li><label>保留字段1：</label>
-				<form:input path="param1" htmlEscape="false" maxlength="120" class="input-medium"/>
-			</li>
-			<li><label>保留字段2：</label>
-				<form:input path="param2" htmlEscape="false" maxlength="120" class="input-medium"/>
-			</li>
-			<li><label>保留字段3：</label>
-				<form:input path="param3" htmlEscape="false" maxlength="120" class="input-medium"/>
-			</li>
-			<li><label>保留字段4：</label>
-				<form:input path="param4" htmlEscape="false" maxlength="120" class="input-medium"/>
-			</li>
 			<li class="btns"><input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/></li>
 			<li class="clearfix"></li>
 		</ul>
@@ -53,10 +41,6 @@
 			<tr>
 				<th>课程章节</th>
 				<th>上课时间</th>
-				<th>保留字段1</th>
-				<th>保留字段2</th>
-				<th>保留字段3</th>
-				<th>保留字段4</th>
 				<shiro:hasPermission name="school:base:ygCourseTime:edit"><th>操作</th></shiro:hasPermission>
 			</tr>
 		</thead>
@@ -69,18 +53,7 @@
 				<td>
 					${ygCourseTime.timeRange}
 				</td>
-				<td>
-					${ygCourseTime.param1}
-				</td>
-				<td>
-					${ygCourseTime.param2}
-				</td>
-				<td>
-					${ygCourseTime.param3}
-				</td>
-				<td>
-					${ygCourseTime.param4}
-				</td>
+			
 				<shiro:hasPermission name="school:base:ygCourseTime:edit"><td>
     				<a href="${ctx}/school/base/ygCourseTime/form?id=${ygCourseTime.id}">修改</a>
 					<a href="${ctx}/school/base/ygCourseTime/delete?id=${ygCourseTime.id}" onclick="return confirmx('确认要删除该课时维护吗？', this.href)">删除</a>
