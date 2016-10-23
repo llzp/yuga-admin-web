@@ -44,9 +44,9 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
-				<th>创建时间</th>
 				<th>班级名称</th>
 				<th>年级</th>
+				<th>创建时间</th>
 				<shiro:hasPermission name="school:base:ygClass:edit"><th>操作</th></shiro:hasPermission>
 			</tr>
 		</thead>
@@ -54,13 +54,13 @@
 		<c:forEach items="${page.list}" var="ygClass">
 			<tr>
 				<td><a href="${ctx}/school/base/ygClass/form?id=${ygClass.id}">
-					<fmt:formatDate value="${ygClass.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
+					${ygClass.className}
 				</a></td>
 				<td>
-					${ygClass.className}
+					${fns:getGradeLabel(ygClass.classGrade)}
 				</td>
 				<td>
-					${ygClass.classGrade}
+					<fmt:formatDate value="${ygClass.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
 				</td>
 				<shiro:hasPermission name="school:base:ygClass:edit"><td>
     				<a href="${ctx}/school/base/ygClass/form?id=${ygClass.id}">修改</a>

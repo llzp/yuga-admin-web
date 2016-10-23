@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yuga.modules.school.dao.checker.ClassCheckDao">
+<mapper namespace="com.yuga.modules.school.dao.checker.YgClassCheckDao">
     
-	<sql id="classCheckColumns">
+	<sql id="ygClassCheckColumns">
 		a.id AS "id",
+		a.grade_id AS "gradeId",
 		a.course_section AS "courseSection",
 		a.teacher_id AS "teacherId",
 		a.checker_id AS "checkerId",
+		a.teacher_status_id AS "teacherStatusId",
+		a.student_status_id AS "studentStatusId",
+		a.multimedia_status_id AS "multimediaStatusId",
 		a.condition_1 AS "condition1",
 		a.condition_2 AS "condition2",
 		a.condition_3 AS "condition3"
 	</sql>
 	
-	<sql id="classCheckJoins">
+	<sql id="ygClassCheckJoins">
 	</sql>
     
-	<select id="get" resultType="ClassCheck">
+	<select id="get" resultType="YgClassCheck">
 		SELECT 
-			<include refid="classCheckColumns"/>
+			<include refid="ygClassCheckColumns"/>
 		FROM yg_class_check a
-		<include refid="classCheckJoins"/>
+		<include refid="ygClassCheckJoins"/>
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findList" resultType="ClassCheck">
+	<select id="findList" resultType="YgClassCheck">
 		SELECT 
-			<include refid="classCheckColumns"/>
+			<include refid="ygClassCheckColumns"/>
 		FROM yg_class_check a
-		<include refid="classCheckJoins"/>
+		<include refid="ygClassCheckJoins"/>
 		<where>
 			
+			<if test="gradeId != null and gradeId != ''">
+				AND a.grade_id = #{gradeId}
+			</if>
 			<if test="courseSection != null and courseSection != ''">
 				AND a.course_section = #{courseSection}
 			</if>
@@ -38,6 +45,15 @@
 			</if>
 			<if test="checkerId != null and checkerId != ''">
 				AND a.checker_id = #{checkerId}
+			</if>
+			<if test="teacherStatusId != null and teacherStatusId != ''">
+				AND a.teacher_status_id = #{teacherStatusId}
+			</if>
+			<if test="studentStatusId != null and studentStatusId != ''">
+				AND a.student_status_id = #{studentStatusId}
+			</if>
+			<if test="multimediaStatusId != null and multimediaStatusId != ''">
+				AND a.multimedia_status_id = #{multimediaStatusId}
 			</if>
 		</where>
 		<choose>
@@ -49,11 +65,11 @@
 		</choose>
 	</select>
 	
-	<select id="findAllList" resultType="ClassCheck">
+	<select id="findAllList" resultType="YgClassCheck">
 		SELECT 
-			<include refid="classCheckColumns"/>
+			<include refid="ygClassCheckColumns"/>
 		FROM yg_class_check a
-		<include refid="classCheckJoins"/>
+		<include refid="ygClassCheckJoins"/>
 		<where>
 			
 		</where>		
@@ -68,30 +84,33 @@
 	
 	<insert id="insert">
 		INSERT INTO yg_class_check(
+			grade_id,
 			course_section,
 			teacher_id,
 			checker_id,
-			condition_1,
-			condition_2,
-			condition_3
+			teacher_status_id,
+			student_status_id,
+			multimedia_status_id
 		) VALUES (
+			#{gradeId},
 			#{courseSection},
 			#{teacherId},
 			#{checkerId},
-			#{condition1},
-			#{condition2},
-			#{condition3}
+			#{teacherStatusId},
+			#{studentStatusId},
+			#{multimediaStatusId}
 		)
 	</insert>
 	
 	<update id="update">
 		UPDATE yg_class_check SET 	
+			grade_id = #{gradeId},
 			course_section = #{courseSection},
 			teacher_id = #{teacherId},
 			checker_id = #{checkerId},
-			condition_1 = #{condition1},
-			condition_2 = #{condition2},
-			condition_3 = #{condition3}
+			teacher_status_id = #{teacherStatusId},
+			student_status_id = #{studentStatusId},
+			multimedia_status_id = #{multimediaStatusId}
 		WHERE id = #{id}
 	</update>
 	

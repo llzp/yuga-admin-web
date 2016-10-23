@@ -10,6 +10,114 @@
 	<short-name>fns</short-name>
 	<uri>http://java.sun.com/jsp/jstl/functionss</uri>
 
+	<!-- 	自定义信息 -->
+	<function>
+		<description>获取教师信息</description>
+		<name>getTeacherList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getTeacherList()</function-signature>
+		<example>${fns:getTeacherList()}</example>
+	</function>
+	<function>
+		<description>获取年级级别</description>
+		<name>getGradeList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getGradeList()</function-signature>
+		<example>${fns:getGradeList()}</example>
+	</function>
+	<function>
+		<description>获取年级级别Label</description>
+		<name>getGradeLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getGradeLabel(java.lang.String)</function-signature>
+		<example>${fns:getGradeLabel(id)}</example>
+	</function>
+	<function>
+		<description>获取课程</description>
+		<name>getYgCourseList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getYgCourseList()</function-signature>
+		<example>${fns:getYgCourseList()}</example>
+	</function>
+	<function>
+		<description>获取课程Label</description>
+		<name>getYgCourseListLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getYgCourseListLabel(java.lang.String)</function-signature>
+		<example>${fns:getYgCourseListLabel(id)}</example>
+	</function>
+	<function>
+		<description>获取课时安排</description>
+		<name>getYgCourseTimeList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getYgCourseTimeList()</function-signature>
+		<example>${fns:getYgCourseTimeList()}</example>
+	</function>
+	<function>
+		<description>获取课时安排Label</description>
+		<name>getYgCourseTimeListLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getYgCourseTimeListLabel(java.lang.String)</function-signature>
+		<example>${fns:getYgCourseTimeListLabel(id)}</example>
+	</function>
+	<function>
+		<description>获取班级信息</description>
+		<name>getYgClassList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getYgClassList()</function-signature>
+		<example>${fns:getYgClassList()}</example>
+	</function>
+	<function>
+		<description>获取班级信息Label</description>
+		<name>getYgClassListLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getYgClassListLabel(java.lang.String)</function-signature>
+		<example>${fns:getYgClassListLabel(id)}</example>
+	</function>
+	<function>
+		<description>获取多媒体使用情况</description>
+		<name>getMultiStatusList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getMultiStatusList()</function-signature>
+		<example>${fns:getMultiStatusList()}</example>
+	</function>
+	<function>
+		<description>获取多媒体使用情况Label</description>
+		<name>getMultiStatusListLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getMultiStatusListLabel(java.lang.String)</function-signature>
+		<example>${fns:getMultiStatusListLabel(id)}</example>
+	</function>
+	<function>
+		<description>获取教师教学情况</description>
+		<name>getTeacherStatusList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getTeacherStatusList()</function-signature>
+		<example>${fns:getTeacherStatusList()}</example>
+	</function>
+		<function>
+		<description>获取教师教学情况Label</description>
+		<name>getTeacherStatusListLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getTeacherStatusListLabel(java.lang.String)</function-signature>
+		<example>${fns:getTeacherStatusListLabel(id)}</example>
+	</function>
+	<function>
+		<description>获取学生学习情况</description>
+		<name>getStudentStatusList</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getStudentStatusList()</function-signature>
+		<example>${fns:getStudentStatusList()}</example>
+	</function>
+		<function>
+		<description>获取学生学习情况Label</description>
+		<name>getStudentStatusListLabel</name>
+		<function-class>com.yuga.modules.school.utils.SchoolUtil</function-class>
+		<function-signature>java.util.List getStudentStatusListLabel(java.lang.String)</function-signature>
+		<example>${fns:getStudentStatusListLabel(id)}</example>
+	</function>
+
+	<!-- 自定义结束 -->	
 	<function>
 		<description>获取管理路径</description>
 		<name>getAdminPath</name>
@@ -45,71 +153,6 @@
 		<function-signature>java.lang.Object getConst(java.lang.String)</function-signature>
 		<example>${fns:getConst(key)}</example>
 	</function>
-
-	<function>
-		<description>获取课程表</description>
-		<name>getCourseList</name>
-		<function-class>com.yuga.modules.admin.utils.CourseUtil</function-class>
-		<function-signature>java.util.List getCourseList()</function-signature>
-		<example>${fns:getCourseList()}</example>
-	</function>
-
-	<function>
-		<description>获取场馆信息列表</description>
-		<name>getVenueList</name>
-		<function-class>com.yuga.modules.admin.utils.VenueUtil</function-class>
-		<function-signature>java.util.List getVenueList()</function-signature>
-		<example>${fns:getVenueList()}</example>
-	</function>
-
-	<function>
-		<description>获取服务模块</description>
-		<name>getServiceModuleList</name>
-		<function-class>com.yuga.modules.admin.utils.ServiceModuleUtil</function-class>
-		<function-signature>java.util.List getServiceModuleList()</function-signature>
-		<example>${fns:getServiceModuleList()}</example>
-	</function>
-	
-	<function>
-		<description>获取门票种类信息列表</description>
-		<name>getTicketTypeList</name>
-		<function-class>com.yuga.modules.admin.utils.TicketUtil</function-class>
-		<function-signature>java.util.List getTicketTypeList()</function-signature>
-		<example>${fns:getTicketTypeList()}</example>
-	</function>
-	
-	<function>
-		<description>获取对应类型会员</description>
-		<name>getMemberList</name>
-		<function-class>com.yuga.modules.admin.utils.MemberUtil</function-class>
-		<function-signature>java.util.List getMemberList(int)</function-signature>
-		<example>${fns:getMemberList(key)}</example>
-	</function>
-	
-	<function>
-		<description>获取优惠券信息列表</description>
-		<name>getCouponList</name>
-		<function-class>com.yuga.modules.admin.utils.CouponUtil</function-class>
-		<function-signature>java.util.List getCouponList()</function-signature>
-		<example>${fns:getCouponList()}</example>
-	</function>
-	
-	<function>
-		<description>获取所有优惠券信息列表</description>
-		<name>getAllCouponList</name>
-		<function-class>com.yuga.modules.admin.utils.CouponUtil</function-class>
-		<function-signature>java.util.List getAllCouponList()</function-signature>
-		<example>${fns:getAllCouponList}</example>
-	</function>
-	
-	<function>
-		<description>获取未归属活动的优惠券列表</description>
-		<name>getUnGetCouponList</name>
-		<function-class>com.yuga.modules.admin.utils.CouponUtil</function-class>
-		<function-signature>java.util.List getUnGetCouponList()</function-signature>
-		<example>${fns:getUnGetCouponList()}</example>
-	</function>
-	
 	<function>
 		<description>获取树数据列表</description>
 		<name>getTreeDataList</name>
@@ -118,69 +161,6 @@
 		<example>${fns:getTreeDataList(type,id)}</example>
 	</function>
 	
-	<function>
-		<description>获取所有门票种类信息列表</description>
-		<name>getAllTicketTypeList</name>
-		<function-class>com.yuga.modules.admin.utils.TicketUtil</function-class>
-		<function-signature>java.util.List getAllTicketTypeList()</function-signature>
-		<example>${fns:getAllTicketTypeList()}</example>
-	</function>
-	
-	<function>
-		<description>获取短信模板标题信息列表</description>
-		<name>getSmsTemplateList</name>
-		<function-class>com.yuga.modules.admin.utils.SMSTemplateUtil</function-class>
-		<function-signature>java.util.List getSmsTemplateList()</function-signature>
-		<example>${fns:getSmsTemplateList()}</example>
-	</function>
-	
-	<function>
-		<description>获取二维码来源列表</description>
-		<name>getQRSourceList</name>
-		<function-class>com.yuga.modules.admin.utils.QRSourceUtil</function-class>
-		<function-signature>java.util.List getQRSourceList()</function-signature>
-		<example>${fns:getQRSourceList()}</example>
-	</function>
-
-	<function>
-		<description>获取二维码来源</description>
-		<name>getQRLabel</name>
-		<function-class>com.yuga.modules.admin.utils.QRSourceUtil</function-class>
-		<function-signature>java.lang.String getQRLabel(java.lang.String)</function-signature>
-		<example>${fns:getQRLabel(key)}</example>
-	</function>
-
-	<function>
-		<description>获取活动信息列表</description>
-		<name>getActivityList</name>
-		<function-class>com.yuga.modules.admin.utils.ActivityUtil</function-class>
-		<function-signature>java.util.List getActivityList()</function-signature>
-		<example>${fns:getActivityList()}</example>
-	</function>
-
-	<function>
-		<description>获取活动信息内容</description>
-		<name>getActivityLable</name>
-		<function-class>com.yuga.modules.admin.utils.ActivityUtil</function-class>
-		<function-signature>java.util.List getActivityLable(java.lang.String)</function-signature>
-		<example>${fns:getActivityLable(key)}</example>
-	</function>
-
-	<function>
-		<description>获取门票内容</description>
-		<name>getTicketLable</name>
-		<function-class>com.yuga.modules.admin.utils.TicketUtil</function-class>
-		<function-signature>java.util.List getTicketLable(java.lang.String)</function-signature>
-		<example>${fns:getTicketLable(key)}</example>
-	</function>
-	<function>
-		<description>获取优惠券内容</description>
-		<name>getCouponLable</name>
-		<function-class>com.yuga.modules.admin.utils.CouponUtil</function-class>
-		<function-signature>java.util.List getCouponLable(java.lang.String)</function-signature>
-		<example>${fns:getCouponLable(key)}</example>
-	</function>
-
 	<function>
 		<description>获取树数据内容</description>
 		<name>getTreeDataName</name>

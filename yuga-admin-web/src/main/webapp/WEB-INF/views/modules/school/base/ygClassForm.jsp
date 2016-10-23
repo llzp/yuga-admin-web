@@ -34,23 +34,27 @@
 		<form:hidden path="id"/>
 		<sys:message content="${message}"/>		
 		<div class="control-group">
-			<label class="control-label">创建时间：</label>
+			<label class="control-label">年级：</label>
 			<div class="controls">
-				<input name="createTime" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate "
-					value="<fmt:formatDate value="${ygClass.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>"
-					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
+				<form:select id="classGrade" path="classGrade" class="input-xlarge">
+					<form:option value="-1" label="无班级"/>
+					<form:options items="${fns:getGradeList()}" itemLabel="name" itemValue="id" title="clas" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">班级名称：</label>
 			<div class="controls">
-				<form:input path="className" htmlEscape="false" maxlength="255" class="input-xlarge "/>
+				<form:input path="className" htmlEscape="false" maxlength="255" class="input-xlarge required"/>
+				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">年级：</label>
+			<label class="control-label">创建时间：</label>
 			<div class="controls">
-				<form:input path="classGrade" htmlEscape="false" maxlength="1" class="input-xlarge "/>
+				<input name="createTime" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate "
+					value="<fmt:formatDate value="${ygClass.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>"
+					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
 			</div>
 		</div>
 		<div class="form-actions">
